@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend-Django
+    ports:
+      - "8001:8001"
+    environment:
+      - DJANGO_SECRET_KEY=${DJANGO_SECRET_KEY}
+      - DEBUG=False
+      - ALLOWED_HOSTS=${ALLOWED_HOSTS}
+      - CONTACT_FORM_RECIPIENT=${CONTACT_FORM_RECIPIENT}
+    volumes:
+      - ./backend-Django/media:/app/media
+    restart: unless-stopped
+
+  frontend:
+    build: ./portfolio-angular-Kouame-jean-Raphael-Trinite
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  media:
