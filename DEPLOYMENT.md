@@ -28,7 +28,7 @@ git push origin main
    - **Runtime**: Python 3
    - **Root Directory**: `backend-Django`
    - **Build Command**: `pip install -r requirements.txt`
-   - **Start Command**: `cd backend-Django && gunicorn config.wsgi:application`
+   - **Start Command**: `gunicorn config.wsgi:application`
    - **Instance Type**: Free
 
 ### 1.3 Variables d'Environnement
