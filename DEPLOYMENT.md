@@ -26,14 +26,15 @@ git push origin main
 5. Configurez le service :
    - **Name**: portfolio-backend
    - **Runtime**: Python 3
+   - **Root Directory**: `backend-Django`
    - **Build Command**: `pip install -r requirements.txt`
-   - **Start Command**: `gunicorn config.wsgi:application`
+   - **Start Command**: `cd backend-Django && gunicorn config.wsgi:application`
    - **Instance Type**: Free
 
 ### 1.3 Variables d'Environnement
 Ajoutez ces variables dans Render Dashboard :
 ```
-DJANGO_SECRET_KEY=votre-clé-secrète-ici
+DJANGO_SECRET_KEY=yXSycDk8NKpZ4uv214jGORbqsap7BnAUi5BTzpNRDzjbbF6kiU_qc5oqjvqJ8yu1-54
 DEBUG=False
 ALLOWED_HOSTS=votre-url.onrender.com
 CONTACT_FORM_RECIPIENT=kouamejeantrinite@gmail.com
@@ -76,8 +77,9 @@ npm run build
 1. Cliquez sur "Add new site" → "Import an existing project"
 2. Sélectionnez votre repository
 3. Configurez les paramètres :
-   - **Build command**: `npm run build`
-   - **Publish directory**: `dist/portfolio`
+   - **Base directory**: `portfolio-angular-Kouame-jean-Raphael-Trinite`
+   - **Build command**: `cd portfolio-angular-Kouame-jean-Raphael-Trinite && npm run build`
+   - **Publish directory**: `portfolio-angular-Kouame-jean-Raphael-Trinite/dist/portfolio`
    - **Node version**: 18
 
 ### 3.3 Variables d'Environnement (Optionnel)

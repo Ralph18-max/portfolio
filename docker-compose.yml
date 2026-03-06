@@ -6,10 +6,10 @@ services:
     ports:
       - "8001:8001"
     environment:
-      - DJANGO_SECRET_KEY=${DJANGO_SECRET_KEY}
+      - DJANGO_SECRET_KEY=yXSycDk8NKpZ4uv214jGORbqsap7BnAUi5BTzpNRDzjbbF6kiU_qc5oqjvqJ8yu1-54
       - DEBUG=False
-      - ALLOWED_HOSTS=${ALLOWED_HOSTS}
-      - CONTACT_FORM_RECIPIENT=${CONTACT_FORM_RECIPIENT}
+      - ALLOWED_HOSTS=yourdomain.com
+      - CONTACT_FORM_RECIPIENT=kouamejeantrinite@gmail.com
     volumes:
       - ./backend-Django/media:/app/media
     restart: unless-stopped
