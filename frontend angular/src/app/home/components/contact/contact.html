@@ -1,0 +1,151 @@
+<section class="contact" id="contact">
+  <div class="container d-flex flex-column justify-content-between h-100 ">
+    <div class="section-title flex-grow-1">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="text-center">
+            <h2  data-aos="heading-show" class="text_background">
+              Get in Touch
+              <span class="heading_background">Contact Me</span>
+            </h2>
+            <p class="m-0">It is a long established fact that a reader will be distracted by the readable content</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-content flex-grow-1">
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="d-flex flex-row flex-sm-column flex-md-row justify-content-md-center mb-3 text-left text-sm-center text-md-left">
+            <div class="contact-icon mr-md-3 mr-3 mr-sm-0">
+              <span class="mbri-letter"></span>
+            </div>
+            <div class="contact-details mt-2">
+              <h5>Email</h5>
+              <p><a href="mailto:kouamejeantrinite@gmail.com">kouamejeantrinite@gmail.com</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="d-flex flex-row flex-sm-column flex-md-row justify-content-md-center mb-3 text-left text-sm-center text-md-left">
+            <div class="contact-icon mr-md-3 mr-3 mr-sm-0">
+              <span class="mbri-mobile"></span>
+            </div>
+            <div class="contact-details mt-2">
+              <h5>Phone</h5>
+              <p><a href="tel:+2250595010622">05-95-01-06-22</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="d-flex flex-row flex-sm-column flex-md-row justify-content-md-center mb-3 text-left text-sm-center text-md-left">
+            <div class="contact-icon mr-md-3 mr-3 mr-sm-0">
+              <span class="mbri-map-pin"></span>
+            </div>
+            <div class="contact-details mt-2">
+              <h5>Location</h5>
+              <p>Grand-Bassam, Côte d'Ivoire</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="d-flex flex-row flex-sm-column flex-md-row justify-content-md-center mb-3 text-left text-sm-center text-md-left">
+            <div class="contact-icon mr-md-3 mr-3 mr-sm-0">
+              <span class="mbri-link"></span>
+            </div>
+            <div class="contact-details mt-2">
+              <h5>LinkedIn</h5>
+              <p>
+                <a href="https://www.linkedin.com/in/rapha%C3%ABl-kouam%C3%A9-1322b7396?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">View my profile</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-5">
+        <div class="col-lg-12">
+          <form (submit)="onSubmit($event)">
+            <div class="row">
+              <div class="col-lg-6 mt-3">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    name="nom_complet"
+                    id="nom_complet"
+                    class="form-control"
+                    autocomplete="off"
+                    required
+                    [(ngModel)]="form().nom_complet"
+                  >
+                  <label>Full Name</label>
+                </div>
+              </div>
+              <div class="col-lg-6 mt-3">
+                <div class="form-group">
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    class="form-control"
+                    autocomplete="off"
+                    required
+                    [(ngModel)]="form().email"
+                  >
+                  <label>Email</label>
+                </div>
+              </div>
+              <div class="col-lg-12 mt-3">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    name="objet"
+                    id="objet"
+                    class="form-control"
+                    autocomplete="off"
+                    required
+                    [(ngModel)]="form().objet"
+                  >
+                  <label>Subject</label>
+                </div>
+              </div>
+              <div class="col-lg-12 mt-3">
+                <div class="form-group">
+                  <textarea
+                    name="message"
+                    id="message"
+                    rows="6"
+                    class="form-control"
+                    required
+                    [(ngModel)]="form().message"
+                  ></textarea>
+                  <label>Message</label>
+                </div>
+              </div>
+              <div class="col-lg-12 mt-3">
+                <div class="form-group mb-0 text-right">
+                  <button
+                    type="submit"
+                    id="contact-btn"
+                    class="btn btn-outline-primary btn-bg"
+                    [disabled]="isSubmitting()"
+                  >
+                    {{ isSubmitting() ? 'Sending...' : 'Send Message' }}
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-lg-12" *ngIf="submitSuccess()">
+                <p class="text-success m-0">Your message has been sent successfully.</p>
+              </div>
+              <div class="col-lg-12" *ngIf="submitError()">
+                <p class="text-danger m-0">{{ submitError() }}</p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

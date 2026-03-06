@@ -1,0 +1,36 @@
+<section class="services" id="service">
+  <div class="container d-flex flex-column justify-content-between h-100 ">
+
+    <div class="section-title flex-grow-1">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="text-center">
+            <h2 data-aos="heading-show" class="text_background">
+              What I Do
+              <span class="heading_background">Services</span>
+            </h2>
+            <p class="m-0">It is a long established fact that a reader will be distracted by the readable content</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-content flex-grow-1">
+      <div class="row" *ngIf="!isLoading()">
+        <div class="col-lg-4 col-md-6 mt-4 mb-2" *ngFor="let service of services()">
+          <div class="service-single text-left p-5">
+            <div class="service-icon">
+              <span class="mbri-rocket"></span>
+            </div>
+            <h3 class="my-3">{{ service.nom }}</h3>
+            <p>{{ service.detail }}</p>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="isLoading()" class="mt-4">
+        Loading services...
+      </div>
+    </div>
+
+  </div>
+</section>

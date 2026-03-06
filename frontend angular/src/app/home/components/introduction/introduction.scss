@@ -1,0 +1,28 @@
+.heading-zone {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.intro-profile-image {
+  width: 260px;
+  height: auto;
+  max-height: 260px;
+  border-radius: 0;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .heading-zone {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .intro-profile-image {
+    width: 100%;
+    max-width: 260px;
+    max-height: none;
+  }
+}
